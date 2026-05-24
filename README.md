@@ -1,36 +1,63 @@
-# ormaoz.com
+# 🚀 ormaoz.com – Pages Hub
 
-Personal brand & digital hub — automation, strategy, and digital solutions.
+Central repo for all landing pages, funnels, and microsites under `ormaoz.com` subdomains.
 
-## Structure
+## 🏗️ Architecture
+
+```
+ormaoz.com (ClickFunnels)     ← Main domain stays on ClickFunnels
+├── funnel.ormaoz.com         ← Vercel → pages/funnel/
+├── diary.ormaoz.com          ← Vercel → pages/diary/
+├── portfolio.ormaoz.com      ← Vercel → pages/portfolio/
+└── [anything].ormaoz.com     ← Vercel → pages/[anything]/
+```
+
+## 📂 Repo Structure
 
 ```
 ormaoz.com/
-├── index.html              # Main homepage
-├── CNAME                   # GitHub Pages custom domain
-├── assets/
-│   ├── css/style.css       # Global styles
-│   └── js/main.js          # Global scripts
-└── pages/
-    └── funnel/             # Marketing funnel page
-        ├── index.html      # Landing page
-        ├── index.css       # Funnel styles
-        ├── script.js       # Funnel scripts
-        └── thank-you.html  # Thank you page
+├── README.md
+├── pages/
+│   ├── funnel/           ← funnel.ormaoz.com
+│   │   ├── index.html
+│   │   ├── index.css
+│   │   ├── script.js
+│   │   └── thank-you.html
+│   ├── diary/            ← diary.ormaoz.com (example)
+│   │   └── index.html
+│   └── [new-page]/       ← [new-page].ormaoz.com
+│       └── index.html
 ```
 
-## Adding New Pages
+## ⚡ How to Add a New Page
 
-1. Create a folder inside `pages/` (e.g. `pages/new-page/`)
-2. Add `index.html` and any assets
-3. Link to it from the main site: `<a href="pages/new-page/">`
-4. Commit & push — GitHub Pages auto-deploys
+### Step 1: Create the page
+```bash
+mkdir pages/my-new-page
+# Add index.html and any assets
+```
 
-## Live URLs
+### Step 2: Deploy to Vercel
+```bash
+cd pages/my-new-page
+vercel --yes
+```
 
-- **Homepage:** https://ormaoz.com
-- **Funnel:** https://ormaoz.com/pages/funnel/
+### Step 3: Connect subdomain
+1. In Vercel dashboard → Project Settings → Domains
+2. Add: `my-new-page.ormaoz.com`
+3. In your DNS provider, add CNAME: `my-new-page` → `cname.vercel-dns.com`
 
-## Deploy
+Done! ✅
 
-Hosted on GitHub Pages. Push to `main` branch to deploy automatically.
+## 🔗 Live Pages
+
+| Page | Subdomain | Status |
+|------|-----------|--------|
+| Automation Funnel | `funnel.ormaoz.com` | 🟡 Ready to deploy |
+
+## 💡 Tips
+
+- Each page is self-contained in its folder
+- Vercel auto-deploys on push to `main`
+- Free tier supports unlimited deployments
