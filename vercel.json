@@ -3,14 +3,14 @@
     {
       "source": "/",
       "has": [
-        { "type": "host", "value": "funnel.ormaoz.com" }
+        { "type": "host", "value": "lp.ormaoz.com" }
       ],
       "destination": "/apps/funnel/index.html"
     },
     {
       "source": "/(.*)",
       "has": [
-        { "type": "host", "value": "funnel.ormaoz.com" }
+        { "type": "host", "value": "lp.ormaoz.com" }
       ],
       "destination": "/apps/funnel/$1"
     },
