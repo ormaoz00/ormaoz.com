@@ -1,0 +1,83 @@
+/* ========================================
+   BASE TEMPLATE STYLES
+   Shared across all ormaoz.com pages
+   ======================================== */
+:root {
+    --primary: #7c5cfc;
+    --primary-light: #9b82ff;
+    --primary-glow: rgba(124, 92, 252, 0.35);
+    --accent: #38f9d7;
+    --bg: #08080f;
+    --bg-elevated: #0e0e1a;
+    --bg-card: rgba(255, 255, 255, 0.025);
+    --bg-glass: rgba(255, 255, 255, 0.04);
+    --text: #eeeef5;
+    --text-secondary: #8888a8;
+    --text-muted: #55556e;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.12);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 32px;
+    --radius-full: 100px;
+    --font: 'Heebo', sans-serif;
+    --font-en: 'Inter', sans-serif;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Navbar */
+.navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 14px 0; background: rgba(8, 8, 15, 0.85);
+    backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+}
+.nav-content { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1rem; }
+.logo-mark {
+    width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 8px; font-weight: 800; font-size: 0.9rem;
+    font-family: var(--font-en); color: white;
+}
+.nav-page-name {
+    font-size: 0.85rem; color: var(--text-muted);
+    font-weight: 500; letter-spacing: 0.5px;
+}
+
+/* Main */
+.main-content { padding-top: 80px; min-height: 100vh; }
+
+/* Footer */
+.footer {
+    padding: 32px 0; border-top: 1px solid var(--border);
+    text-align: center;
+}
+.footer p { font-size: 0.75rem; color: var(--text-muted); }
+
+/* Buttons */
+.btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 32px; border-radius: var(--radius-full);
+    font-weight: 700; font-size: 1rem; border: none;
+    cursor: pointer; transition: var(--transition);
+    font-family: var(--font);
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), #6246ea);
+    color: white; box-shadow: 0 4px 24px var(--primary-glow);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px var(--primary-glow); }
