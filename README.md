@@ -1,63 +1,105 @@
-# 🚀 ormaoz.com – Pages Hub
+# ⚡ ormaoz.com
 
-Central repo for all landing pages, funnels, and microsites under `ormaoz.com` subdomains.
+> Personal brand hub – Marketing, Automation, AI & Digital Presence.
+
+## 🧭 Overview
+
+This is the central repository for everything related to **Or Maoz** – my digital world.
+
+The main website ([ormaoz.com](https://ormaoz.com)) is hosted on **ClickFunnels** and serves as my primary platform for:
+- 📝 Blog posts & content
+- 🔄 Marketing funnels
+- 🛠️ Services & offerings
+- 📊 Lead generation & CRM
+
+This repo manages **all additional digital assets** – landing pages, microsites, and tools built rapidly with AI and deployed on **Vercel** as subdomains of `ormaoz.com`.
 
 ## 🏗️ Architecture
 
 ```
-ormaoz.com (ClickFunnels)     ← Main domain stays on ClickFunnels
-├── funnel.ormaoz.com         ← Vercel → pages/funnel/
-├── diary.ormaoz.com          ← Vercel → pages/diary/
-├── portfolio.ormaoz.com      ← Vercel → pages/portfolio/
-└── [anything].ormaoz.com     ← Vercel → pages/[anything]/
+ormaoz.com (ClickFunnels)
+│
+│   Main site: blog, funnels, services, content
+│
+├── funnel.ormaoz.com  →  Vercel  →  pages/funnel/
+├── diary.ormaoz.com   →  Vercel  →  pages/diary/
+└── [xxx].ormaoz.com   →  Vercel  →  pages/[xxx]/
 ```
+
+| Layer | Platform | Purpose |
+|-------|----------|---------|
+| **Main Site** | ClickFunnels | Blog, funnels, services, checkout |
+| **Subdomains** | Vercel + GitHub | AI-built landing pages, tools, microsites |
+| **Source Control** | GitHub | Version control, backup, collaboration |
+| **DNS** | Domain registrar | Route subdomains to Vercel |
 
 ## 📂 Repo Structure
 
 ```
 ormaoz.com/
 ├── README.md
-├── pages/
-│   ├── funnel/           ← funnel.ormaoz.com
+├── .gitignore
+│
+├── _templates/              # Reusable page templates
+│   └── base/                # Base template (HTML + CSS + JS)
+│
+├── pages/                   # Each folder = a subdomain on Vercel
+│   ├── funnel/              # funnel.ormaoz.com – Automation consulting funnel
 │   │   ├── index.html
 │   │   ├── index.css
 │   │   ├── script.js
 │   │   └── thank-you.html
-│   ├── diary/            ← diary.ormaoz.com (example)
-│   │   └── index.html
-│   └── [new-page]/       ← [new-page].ormaoz.com
-│       └── index.html
+│   │
+│   └── diary/               # diary.ormaoz.com – Personal journal
+│       ├── index.html
+│       ├── style.css
+│       └── script.js
+│
+└── [future pages...]
 ```
 
-## ⚡ How to Add a New Page
+## 🚀 Live Pages
 
-### Step 1: Create the page
+| Page | Subdomain | Vercel URL | Status |
+|------|-----------|------------|--------|
+| Automation Funnel | `funnel.ormaoz.com` | [funnel-two-topaz.vercel.app](https://funnel-two-topaz.vercel.app) | ✅ Live |
+| Digital Diary | `diary.ormaoz.com` | [diary-nu-six.vercel.app](https://diary-nu-six.vercel.app) | ✅ Live |
+
+## ⚡ Quick Deploy – New Page
+
 ```bash
-mkdir pages/my-new-page
-# Add index.html and any assets
+# 1. Create the page
+mkdir pages/my-page
+# Add index.html + assets
+
+# 2. Deploy to Vercel
+cd pages/my-page
+vercel --yes --scope speedclean --prod
+
+# 3. Add subdomain (in Vercel Dashboard + DNS)
+# CNAME: my-page → cname.vercel-dns.com
+
+# 4. Commit & push
+cd ../..
+git add . && git commit -m "Add my-page" && git push
 ```
 
-### Step 2: Deploy to Vercel
-```bash
-cd pages/my-new-page
-vercel --yes
-```
+## 🛠️ Tech Stack
 
-### Step 3: Connect subdomain
-1. In Vercel dashboard → Project Settings → Domains
-2. Add: `my-new-page.ormaoz.com`
-3. In your DNS provider, add CNAME: `my-new-page` → `cname.vercel-dns.com`
+- **HTML / CSS / JS** – Static pages, no framework needed
+- **Vercel** – Hosting & CDN (free tier)
+- **GitHub** – Source control
+- **ClickFunnels** – Main site platform
+- **AI (Antigravity)** – Rapid page generation & design
 
-Done! ✅
+## 👤 About
 
-## 🔗 Live Pages
+**Or Maoz** – Automation & digital strategy expert.  
+Helping businesses work smarter with automations, AI, and digital solutions.
 
-| Page | Subdomain | Status |
-|------|-----------|--------|
-| Automation Funnel | `funnel.ormaoz.com` | 🟡 Ready to deploy |
+- 🌐 [ormaoz.com](https://ormaoz.com)
+- 🐙 [github.com/ormaoz00](https://github.com/ormaoz00)
 
-## 💡 Tips
+---
 
-- Each page is self-contained in its folder
-- Vercel auto-deploys on push to `main`
-- Free tier supports unlimited deployments
+© 2026 Or Maoz. All rights reserved.
