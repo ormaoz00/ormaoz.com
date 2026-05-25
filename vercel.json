@@ -17,14 +17,14 @@
     {
       "source": "/",
       "has": [
-        { "type": "host", "value": "diary.ormaoz.com" }
+        { "type": "host", "value": "cal.ormaoz.com" }
       ],
       "destination": "/apps/diary/index.html"
     },
     {
       "source": "/(.*)",
       "has": [
-        { "type": "host", "value": "diary.ormaoz.com" }
+        { "type": "host", "value": "cal.ormaoz.com" }
       ],
       "destination": "/apps/diary/$1"
     },
