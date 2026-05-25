@@ -1,0 +1,36 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "funnel.ormaoz.com" }
+      ],
+      "destination": "/apps/funnel/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "funnel.ormaoz.com" }
+      ],
+      "destination": "/apps/funnel/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "diary.ormaoz.com" }
+      ],
+      "destination": "/apps/diary/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "diary.ormaoz.com" }
+      ],
+      "destination": "/apps/diary/$1"
+    },
+    {
+      "source": "/",
+      "destination": "/README.md"
+    }
+  ]
+}
