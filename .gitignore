@@ -3,3 +3,6 @@ node_modules/
 .env
 *.log
 .vercel
+.gdrive-server-credentials.json
+gcp-oauth.keys.json
+gdrive-secrets.json

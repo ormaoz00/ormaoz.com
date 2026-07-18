@@ -30,6 +30,34 @@
     },
     {
       "source": "/",
+      "has": [
+        { "type": "host", "value": "strategies.ormaoz.com" }
+      ],
+      "destination": "/apps/strategies/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "strategies.ormaoz.com" }
+      ],
+      "destination": "/apps/strategies/$1"
+    },
+    {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "vault.ormaoz.com" }
+      ],
+      "destination": "/apps/strategies/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "vault.ormaoz.com" }
+      ],
+      "destination": "/apps/strategies/$1"
+    },
+    {
+      "source": "/",
       "destination": "/README.md"
     }
   ]
